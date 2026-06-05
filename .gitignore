@@ -1,0 +1,31 @@
+# PyInstaller build artifacts
+build/
+dist/
+*.spec
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Test artifacts
+snapshot_test.json
+
+# User data (window layouts are stored in ~\.window_memory.json, not the repo)
+*.window_memory.json
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
