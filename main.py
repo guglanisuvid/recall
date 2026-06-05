@@ -133,7 +133,7 @@ def main():
     global _icon, _last_sig
 
     _last_sig = monitor_manager.get_signature()
-    print(f"[INIT]  Window Memory started.")
+    print(f"[INIT]  Recall started.")
     print(f"[INIT]  Monitor signature: {_last_sig}")
     print(f"[INIT]  Watching for window moves...\n")
 

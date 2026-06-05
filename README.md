@@ -1,4 +1,4 @@
-# Window Memory
+# Recall
 
 > Because Windows keeps forgetting where you put your stuff.
 
@@ -36,7 +36,7 @@ So this is that, but free, lightweight, and open source.
 
 ---
 
-## What Window Memory Does
+## What Recall Does
 
 - Runs silently in your system tray — no windows, no UI, just a small icon
 - Watches for monitor connect/disconnect events in real time
@@ -65,7 +65,7 @@ You didn't have to do anything
 
 **Window matching** uses `(exe name, window class)` as the primary key — so Chrome stays Chrome even when your tab title changes. Title matching is a fallback.
 
-**Snapped windows** are a special case. Windows internally stores the pre-snap position in `GetWindowPlacement`, which means naive placement restore sends your snapped windows back to wherever they were *before* snapping — completely wrong. This app uses `GetWindowRect` (the actual screen coordinates) for normal windows, and only uses `SetWindowPlacement` for maximized windows where it's actually needed.
+**Snapped windows** are a special case. Windows internally stores the pre-snap position in `GetWindowPlacement`, which means naive placement restore sends your snapped windows back to wherever they were *before* snapping — completely wrong. Recall uses `GetWindowRect` (the actual screen coordinates) for normal windows, and only uses `SetWindowPlacement` for maximized windows where it's actually needed.
 
 **Monitor fingerprinting** uses the set of monitor rectangles as a signature. If you have a 1080p monitor on the left and a 1440p monitor on the right, that's a unique config. Unplug the 1440p and reconnect it — the signature matches and your layout comes back.
 
@@ -79,13 +79,13 @@ You didn't have to do anything
 2. Download `Recall.exe`
 3. Double-click it
 
-That's it. No Python. No install. No setup. The app adds itself to Windows startup automatically on first run so you never have to think about it again. Look for the icon in your system tray (bottom-right near the clock — you may need to click the `^` arrow to find it).
+That's it. No Python. No install. No setup. Recall adds itself to Windows startup automatically on first run so you never have to think about it again. Look for the icon in your system tray (bottom-right near the clock — you may need to click the `^` arrow to find it).
 
 ---
 
 ### Option 2 — Run from Source
 
-**Requirements:** Python 3.11+, Windows 10/11, Google Chrome (for the best experience)
+**Requirements:** Python 3.11+, Windows 10/11
 
 ```bash
 # Clone the repo
@@ -105,20 +105,20 @@ python main.py
 build.bat
 ```
 
-The exe appears in `dist/WindowMemory.exe`. No Python required on the target machine.
+The exe appears in `dist/Recall.exe`. No Python required on the target machine.
 
 ---
 
 ## Usage
 
-Once running, the app lives in your system tray. Right-click the icon for the menu:
+Once running, Recall lives in your system tray. Right-click the icon for the menu:
 
 | Option | What It Does |
 |---|---|
 | **Save Layout** | Snapshot all window positions for your current monitor setup |
 | **Restore Layout** | Move all windows back to the last saved positions |
 | **Toggle Auto-start** | Enable or disable launching at Windows startup |
-| **Quit** | Exit the app |
+| **Quit** | Exit Recall |
 
 **Auto-save / Auto-restore** happens automatically on monitor change — you don't need to use the menu unless you want manual control.
 
@@ -139,7 +139,7 @@ python main.py
 You'll see live logs for every window event:
 
 ```
-[INIT]  Window Memory started.
+[INIT]  Recall started.
 [INIT]  Monitor signature: (0, 0, 1920, 1080)
 [INIT]  Watching for window moves...
 
@@ -165,7 +165,7 @@ Press `Ctrl+C` to quit.
 ## Project Structure
 
 ```
-window-memory/
+recall/
 ├── main.py              # Entry point — wires everything together
 ├── window_manager.py    # Capture and restore window positions
 ├── monitor_manager.py   # WM_DISPLAYCHANGE listener
@@ -190,7 +190,7 @@ window-memory/
 
 ## Why Build This?
 
-This started as a "what would I build in a weekend" thought experiment. The gap was obvious: macOS has had this for over a decade, Windows still doesn't, and the best existing solution costs $30.
+This started as a "what would I build in under an hour" thought experiment. The gap was obvious: macOS has had this for over a decade, Windows still doesn't, and the best existing solution costs $30.
 
 Built in Python because it's fast to iterate, `pywin32` gives full access to the Win32 API, and PyInstaller packages it into a zero-dependency exe. The entire core logic — monitor detection, window capture, restore — is under 150 lines of Python.
 
