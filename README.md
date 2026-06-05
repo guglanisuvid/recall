@@ -2,7 +2,7 @@
 
 > Because Windows keeps forgetting where you put your stuff.
 
-> Built in a weekend. Microsoft had 30 years. No pressure.
+> Built in under an hour. Microsoft had 30 years. No pressure.
 
 ---
 
@@ -198,11 +198,11 @@ Built in Python because it's fast to iterate, `pywin32` gives full access to the
 
 ## Build Time
 
-One weekend.
+Under an hour.
 
 Microsoft has had since **1995** — the year Windows 95 shipped with multi-monitor support — to add this. Thirty years, countless Windows versions, billions in R&D, and the answer was still "just drag your windows back manually, it's fine."
 
-A weekend project fixed it. You're welcome, Redmond.
+One developer. One conversation. Less than 60 minutes. You're welcome, Redmond.
 
 ---
 
