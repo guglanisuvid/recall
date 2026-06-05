@@ -2,6 +2,8 @@
 
 > Because Windows keeps forgetting where you put your stuff.
 
+> Built in a weekend. Microsoft had 30 years. No pressure.
+
 ---
 
 ## The Problem Nobody Talks About (But Everyone Feels)
@@ -191,6 +193,16 @@ window-memory/
 This started as a "what would I build in a weekend" thought experiment. The gap was obvious: macOS has had this for over a decade, Windows still doesn't, and the best existing solution costs $30.
 
 Built in Python because it's fast to iterate, `pywin32` gives full access to the Win32 API, and PyInstaller packages it into a zero-dependency exe. The entire core logic — monitor detection, window capture, restore — is under 150 lines of Python.
+
+---
+
+## Build Time
+
+One weekend.
+
+Microsoft has had since **1995** — the year Windows 95 shipped with multi-monitor support — to add this. Thirty years, countless Windows versions, billions in R&D, and the answer was still "just drag your windows back manually, it's fine."
+
+A weekend project fixed it. You're welcome, Redmond.
 
 ---
 
