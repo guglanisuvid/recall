@@ -73,8 +73,8 @@ You didn't have to do anything
 
 ### Option 1 — Just Download the .exe (Easiest)
 
-1. Go to the [Releases](../../releases) page
-2. Download `WindowMemory.exe`
+1. Go to the [Releases](https://github.com/guglanisuvid/recall/releases/latest) page
+2. Download `Recall.exe`
 3. Double-click it
 
 That's it. No Python. No install. No setup. The app adds itself to Windows startup automatically on first run so you never have to think about it again. Look for the icon in your system tray (bottom-right near the clock — you may need to click the `^` arrow to find it).
@@ -87,8 +87,8 @@ That's it. No Python. No install. No setup. The app adds itself to Windows start
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/window-memory.git
-cd window-memory
+git clone https://github.com/guglanisuvid/recall.git
+cd recall
 
 # Install dependencies
 pip install -r requirements.txt
